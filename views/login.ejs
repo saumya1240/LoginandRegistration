@@ -1,0 +1,34 @@
+<h1>LOGIN</h1>
+
+<style>
+    h1{
+        text-align: center;
+    }
+    .elements,#btn,#link{
+        margin-left: 45%;
+        margin-bottom: 1%;
+    }
+    
+</style>
+
+<form action="/users/login" method="POST">
+
+
+    <div class="elements">
+        <label for="email">EMAIL</label><br>
+        <input type="email" name="email" id="email" required>
+    </div> 
+
+    <div class="elements">
+        <label for="password">PASSWORD</label><br>
+        <input type="password" name="password" id="password" required>
+    </div> 
+
+    <div id="btn">
+        <button type="submit" name="submit">SUBMIT</button>
+    </div>
+
+    <div id="link">
+        <a href="/users/register">REGISTER</a>
+    </div>
+</form>
