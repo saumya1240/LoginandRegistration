@@ -18,18 +18,27 @@
 <form action="/users/register" method="POST">
     <div class="elements">
         <label for="name">NAME</label><br>
-        <input type="text" name="name" id="name" required>
+        <input type="text" name="name" id="name" required
+        value="<%= typeof name != 'undefined' ? name : '' %>">
     </div>  
 
     <div class="elements">
         <label for="email">EMAIL</label><br>
-        <input type="email" name="email" id="email" required>
+        <input type="email" name="email" id="email" required
+        value="<%= typeof email != 'undefined' ? email : '' %>">
     </div> 
 
     <div class="elements">
         <label for="password">PASSWORD</label><br>
-        <input type="password" name="password" id="password" required>
+        <input type="password" name="password" id="password" required
+        value="<%= typeof password != 'undefined' ? password : '' %>">
     </div> 
+
+    <div class="elements">
+        <label for="password">CONFIRM PASSWORD</label><br>
+        <input type="password" name="password2" id="password2" required
+        value ="<%= typeof password2 != 'undefined' ? password2 : '' %>">
+    </div>
 
     <div id="btn">
         <button type="submit" name="submit">SUBMIT</button>

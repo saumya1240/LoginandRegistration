@@ -1,5 +1,6 @@
-<h1>LOGIN</h1>
-
+<!DOCTYPE html>
+<html>
+    <head>
 <style>
     h1{
         text-align: center;
@@ -8,9 +9,11 @@
         margin-left: 45%;
         margin-bottom: 1%;
     }
-    
 </style>
-
+</head>
+<body>
+    <h1>LOGIN</h1>
+<%- include ('partials/messages') %>
 <form action="/users/login" method="POST">
 
 
@@ -32,3 +35,5 @@
         <a href="/users/register">REGISTER</a>
     </div>
 </form>
+</body>
+</html>
