@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bycrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
+const passport = require('passport');
 
 //bodyparser
 //app.use(bodyParser.urlencoded({ extended: false }));
@@ -86,5 +87,21 @@ router.post('/register' , (req,res) => {
     }
     
 })
+
+//login post
+router.post('/login' ,(req,res,next) =>{
+    passport.authenticate('local' ,{
+        successRedirect:'/dashboard',
+        failureRedirect:'/users/login',
+        failureFlash: true
+    })(req,res,next);
+})
+
+//logout Handle
+router.get('/logout', (req,res) =>{
+    req.logOut();
+    req.flash('success_msg', 'You are logged out!');
+    res.redirect('/users/login');
+});
 
 module.exports = router;
